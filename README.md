@@ -6,9 +6,9 @@ Project Title - Image Caption Generation using LSTM </br>
 Dataset - Flickr_8k Dataset (https://www.kaggle.com/adityajn105/flickr8k?select=Images)
 ```
 Group Members -
-  1.Arjun C Menon
-  2.Sameer Prasad Subhedar
-  3.Roshini Bhaskar K 
+  1.Arjun C Menon             PES2201800090
+  2.Sameer Prasad Subhedar    PES2201800323
+  3.Roshini Bhaskar K         PES2201800122
   ```
   
 # Approach to the problem statement
