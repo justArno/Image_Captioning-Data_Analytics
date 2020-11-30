@@ -49,3 +49,16 @@ Both the input models produce a 256 element vector. Further, both input models u
 
 The Decoder model merges the vectors from both input models using an addition operation. This is then fed to a Dense 256 neuron layer and then to a final output Dense layer that makes a softmax prediction over the entire output vocabulary for the next word in the sequence.</br>
  
+# Model Training
+Model is trained using these main parameters - </br>
+epchos - 20</br>
+Descriptions for Photos: train= 6000</br>
+Photos: train= 6000</br>
+Vocabulary Size: 7579</br>
+Description Length:  34</br>
+
+# Model Evaluation
+Once the model is trained we will evaluate a model by generating descriptions for all photos in the test dataset and evaluating those predictions with a standard cost function.</br>
+Which needs a generation of a description for a photo using a trained model. This involves passing in the start description token ‘startseq‘, generating one word, then calling the model recursively with generated words as input until the end of sequence token is reached ‘endseq‘ or the maximum description length is reached.</br>
+The actual and predicted descriptions are collected and evaluated collectively using the corpus BLEU score that summarizes how close the generated text is to the expected text.</br>
+we compare each generated description against all of the reference descriptions for the picture. We then calculate BLEU scores for 1, 2, 3 and 4 cumulative n-grams.
