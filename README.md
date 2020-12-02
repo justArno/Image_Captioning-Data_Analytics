@@ -58,7 +58,8 @@ Vocabulary Size: 7579</br>
 Description Length:  34</br>
 
 # Model Evaluation
-Once the model is trained we will evaluate a model by generating descriptions for all photos in the test dataset and evaluating those predictions with a standard cost function.</br>
-Which needs a generation of a description for a photo using a trained model. This involves passing in the start description token ‘startseq‘, generating one word, then calling the model recursively with generated words as input until the end of sequence token is reached ‘endseq‘ or the maximum description length is reached.</br>
-The actual and predicted descriptions are collected and evaluated collectively using the corpus BLEU score that summarizes how close the generated text is to the expected text.</br>
-we compare each generated description against all of the reference descriptions for the picture. We then calculate BLEU scores for 1, 2, 3 and 4 cumulative n-grams.
+Evaluation of our model was implemented by generating descriptions for all the images in the test dataset and then evaluating those predictions with the standard cost functions.
+This needs the generation of a description for an image using the model that we just trained also known as the predictions of our model. This involves passing the start description or word of the token ‘startseq‘, thus generating one word and then calling the model recursively with generated words as the  input, until the end of the sequence of the token is  ‘endseq‘ or the maximum caption/sentence length is reached.</br>
+The actual and predicted descriptions are collected and evaluated collectively using the corpus BLEU score that summarizes and tells us  how close the generated text is to the expected text.</br>
+BLEU is an algorithm that  is used for evaluating the quality of text which has been machine-translated from one natural language to another or simply predicted by a machine. There are many ways to calculate the BLEU score and the method used for our project is Cumulative N-Gram Scores.N-gram score is the evaluation of just matching grams (grams mean words ) in a specific order, such as single words (1-gram) or word pairs (2-gram or bigram).Cumulative scores refer to the calculation of individual n-gram scores at all orders from 1 to n and weighting them by calculating the weighted geometric mean.</br>
+We then compare each generated description or caption against all of the reference descriptions from the dataset for the given picture. A score above 40% can be considered a good score.</br>
